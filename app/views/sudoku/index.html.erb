@@ -9,10 +9,10 @@
 							<tr class="row100">
 								<td class="column100 column2" data-column="column2"><input type="text" name="1" id="1"></td>
 								<td class="column100 column3" data-column="column3"><input type="text" name="2" id="2"></td>
-								<td class="column100 column4" data-column="column4" style="border-right:  3px solid #000"><input type="text" name="03" id="03"></td>
+								<td class="column100 column4" data-column="column4" style="border-right:  3px solid #000"><input type="text" name="03" id="3"></td>
 								<td class="column100 column5" data-column="column5"><input type="text" name="4" id="4"></td>
 								<td class="column100 column6" data-column="column6"><input type="text" name="5" id="5"></td>
-								<td class="column100 column7" data-column="column7" style="border-right:  3px solid #000"><input type="text" name="06" id="06"></td>
+								<td class="column100 column7" data-column="column7" style="border-right:  3px solid #000"><input type="text" name="06" id="6"></td>
 								<td class="column100 column8" data-column="column8"><input type="text" name="7" id="7"></td>
 								<td class="column100 column9" data-column="column9"><input type="text" name="8" id="8"></td>
 								<td class="column100 column10" data-column="column10"><input type="text" name="9" id="9"></td>
@@ -120,10 +120,42 @@
 	</div>
 
 <script type="text/javascript">
+
+	var escondidos = <%= @bloqueados %>;
+	var los_chidos = <%= @los_chidos %>;
+	console.log(escondidos);
+	console.log("los chidos son");
+	console.log(los_chidos);
+
+	$( document ).ready(function() {
+		var numeros = <%= @los_numeros_finales %>;
+	    //console.log(numeros);
+	    //alert(numeros[0])
+	    for (i = 0; i <= numeros.length; i++) {
+	    	if(numeros[i]==0){
+	    		$("#"+(i+1)).val("");
+	    	}else{
+	    		$("#"+(i+1)).val(numeros[i]);
+	    	}
+		  //console.log(numeros[i]);
+		}
+	});
+
 	$('#prueba input').each(function() { 
 	   $(this).on('change', function () {
-	        console.log($(this).attr('id'));
-	        // Do submission stuff, submit form
+	        //console.log($(this).attr('id'));
+	        var id = $(this).attr('id');
+	        //console.log(id-1);
+	        var ids = id-1
+	        console.log(ids);
+	        console.log($(this).val());
+	        console.log(los_chidos[ids]);
+	        if($(this).val()==los_chidos[ids]){
+	        	console.log("A webo");
+	        }else{
+	        	console.log("nel");
+	        	$(this).val("");
+	        }
 	    });
 	});
 </script>
