@@ -11,10 +11,10 @@ class SudokuController < ApplicationController
   		end
 
   		
-  		require "#{Rails.root}/app/classes/sudoku.rb"
+  		#require "#{Rails.root}/app/classes/sudoku.rb"
   		
   		
-  		puzzle = Sudoku.itself
+  		puzzle = SudokuFinal.new()
 		puts puzzle.class
 		a = puzzle.to_s
 		puts "La a es"

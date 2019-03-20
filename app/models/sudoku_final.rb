@@ -1,14 +1,25 @@
-class SudokuJob < ApplicationJob
-  queue_as :default
-
-  def perform()
-  	@grid = []
-
-  	until valid?
-        generate
-  	end
+class SudokuFinal
+  
+  @grid = []
+  
+  def initialize(grid_string = "")
     
-    def solvable?
+    if grid_string != ""
+      @grid = grid_string.split("").map { |str| str.to_i }
+      
+      raise Exception if !valid?
+      
+      # obviouses.each do |i|
+      #   puts "{#{row_of(i)}, #{col_of(i)}} (#{@grid[i]})"
+      # end
+    else
+      until valid?
+        generate
+      end
+    end
+  end
+  
+  def solvable?
     # First make sure there are >= 17 clues (minimum possible for a sudoku)
     
     if hints < 17
@@ -232,5 +243,5 @@ class SudokuJob < ApplicationJob
         @grid[i+18],  @grid[i+19],  @grid[i+20]
       ] - [0]
     end
-  end
+  
 end
