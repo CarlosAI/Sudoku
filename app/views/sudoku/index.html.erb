@@ -117,7 +117,7 @@
 					</table>
 				</div>
 				<%= form_tag("/choose",method:"get") do %>
-					  <button id="again" type="submit" hidden="true" name="nivel" value="n3">Jugar de nuevo</button>
+					  <button id="again" type="submit" hidden="true" name="nivel" value="n3" class="btn btn-info btn-lg btn-block a"><p>Jugar de nuevo</p></button>
 				<% end %>
 	</div>
 
@@ -186,5 +186,12 @@
 	}
 	.succes{
 		background-color: #a6f47f;
+	}
+	.a{
+		height: 60px;
+		margin-left: 20px;
+	}
+	p{
+		font-size: 30px;
 	}
 </style>
