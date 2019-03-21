@@ -1,12 +1,25 @@
 
 
 <%= form_tag("/play",method:"post") do %>
+<div class="container">
+	<div class="row z">
 
-	<button type="submit" name="nivel" value="n1" class="btn btn-success btn-lg a"><p>Facil</p></button>
+		<div class="col-9 col-sm-9 col-md-8 col-lg-3 col-xl-3 r">
+			<button type="submit" name="nivel" value="n1" class="btn btn-success btn-lg a"><p>Facil</p></button>
+		</div>
 
-	<button type="submit" name="nivel" value="n2" class="btn btn-warning btn-lg a"><p>Normal</p></button>
+		<div class="col-9 col-sm-9 col-md-8 col-lg-3 col-xl-3 r">
+			<button type="submit" name="nivel" value="n2" class="btn btn-warning btn-lg a"><p>Normal</p></button>
+		</div>
 
-	<button type="submit" name="nivel" value="n3" class="btn btn-danger btn-lg a"><p>Dificil</p></button>
+		<div class="col-9 col-sm-9 col-md-8 col-lg-3 col-xl-3 r">
+			<button type="submit" name="nivel" value="n3" class="btn btn-danger btn-lg a"><p>Dificil</p></button>
+		</div>
+	</div>
+
+</div>
+
+	
 
 <% end %>
 
@@ -18,8 +31,21 @@ p{
 .a{
 	width: 300px;
 	height: 90px;
-	margin-left: 200px;
-	margin-top: 300px;
+	
+}
+
+.r{
+	margin-left: 70px;
+}
+
+.z{
+	top: 40%;
+    position: fixed;
+}
+
+body{
+  /*background-color: #23fe;*/
+  background-image: url("Fondo.jpg");
 }
 	
 </style>

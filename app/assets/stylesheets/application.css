@@ -20,8 +20,8 @@
 
 
 @font-face {
-  font-family: Montserrat-Regular;
-  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
+  /*font-family: Montserrat-Regular;
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); */
 }
 
 @font-face {
@@ -114,7 +114,7 @@ iframe {
 .container-table100 {
   width: 100%;
   min-height: 100vh;
-  background: #d1d1d1;
+ /* background: #d1d1d1;*/
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -174,7 +174,7 @@ th, td {
 /*==================================================================
 [ Ver1 ]*/
 .table100.ver1 td {
-  font-family: Montserrat-Regular;
+ /* font-family: Montserrat-Regular;*/
   font-size: 14px;
   color: #808080;
   line-height: 1.4;
